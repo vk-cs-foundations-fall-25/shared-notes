@@ -1,6 +1,7 @@
 # CS 301: Foundations of Computer Science
 
 Syllabus – **Fall 2025** 
+
 Lake Washington Institute of Technology
 
 ## Course Information
