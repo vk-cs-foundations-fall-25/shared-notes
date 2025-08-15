@@ -4,7 +4,7 @@
 
 ## In Practice
 
-![b2dc9bbf8c912f60deb6ca6ea8add6a82540ff52](media/b2dc9bbf8c912f60deb6ca6ea8add6a82540ff52.png)
+![b2dc9bbf8c912f60deb6ca6ea8add6a82540ff52](../media/b2dc9bbf8c912f60deb6ca6ea8add6a82540ff52.png)
 
 ## In Theory
 
@@ -13,7 +13,7 @@
 - We don't care how such a theoretical computer is realized in the real world 
 
 
-![](media/abstract-machine.excalidraw.png)
+![../media/abstract-machine.excalidraw.png](../media/abstract-machine.excalidraw.png)
 
 ### Components and capabilities
 
