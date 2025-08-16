@@ -9,4 +9,4 @@ Vishesh Khemani
 ---
 
 -  [Syllabus](syllabus.md) 
-- [Lecture notes and slides](notes)
+- [Lecture notes and slides](notes/index.md)
