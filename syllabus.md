@@ -14,8 +14,8 @@ Lake Washington Institute of Technology
 - Class location: **West Building Room W403**
 - Last Day to Withdraw from Classes: Wednesday, November 26
 - No class sessions on the following non-academic days:
-  - Monday, October 13 (Instruction Inservice Day)
   - Wednesday, November 5 (Advising Day)
+  - Monday, November 10 (Instruction Inservice Day)
   - Tuesday, November 11 (Holiday)
   - Thursday-Saturday, November 27-29 (Holiday)
 
