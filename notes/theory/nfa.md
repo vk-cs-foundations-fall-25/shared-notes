@@ -4,29 +4,15 @@
 - It enhances state transitions in three ways:
   1. A state can have transitions to **multiple states on the same symbol** being read
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      q1 --> q2 : 0, 1
-      q1 --> q3 : 1
-    ```
+    ![alt text](../media/multi-transitions.excalidraw.svg)
 
   2. A state can have transitions to other states without a symbol being read (**null transitions**)
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      q1 --> q2 : ε
-      q1 --> q3 : ε
-    ```
+    ![alt text](../media/null-transitions.excalidraw.svg)
 
   3. A state can have **no transitions for some symbols**. These are effectively dead ends.
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      q1 --> q2 : 0
-    ```
+    ![alt text](../media/no-transitions.excalidraw.svg)
 
 - How to run such a nondeterministic machine?
   - Follow all possible paths
@@ -40,57 +26,22 @@
 - Automata that accepts binary strings ending in "1"
 - DFA
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      [*] --> pending_1
-      pending_1 --> pending_1 : 0
-      pending_1 --> accept : 1
-      accept --> pending_1 : 0
-      accept --> accept : 1
-    ```
+    ![alt text](../media/1-ending.excalidraw.svg)
 
 - NFA
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      [*] --> pending_1
-      pending_1 --> pending_1 : 0, 1
-      pending_1 --> accept : 1
-    ```
+    ![alt text](../media/1-ending-nfa.excalidraw.svg)
 
 ### Example 2
 
 - Automata that accepts binary strings ending in "01"
 - DFA
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      [*] --> pending_0
-      pending_0 --> pending_1 : 0
-      pending_1 --> accept : 1
-
-      pending_0 --> pending_0 : 1
-      pending_1 --> pending_1 : 0
-      accept --> pending_1 : 0
-      accept --> pending_0 : 1
-
-
-    ```
+    ![alt text](../media/01-ending-dfa.excalidraw.svg)
 
 - NFA
 
-    ```mermaid
-    stateDiagram-v2
-      direction LR
-      [*] --> pending_0
-      pending_0 --> pending_1 : 0
-      pending_1 --> accept : 1
-
-      pending_0 --> pending_0 : 0, 1
-    ```
+    ![alt text](../media/01-ending-nfa.excalidraw.svg)
 
 ### Example 3
 
