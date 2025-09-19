@@ -7,6 +7,7 @@
       2. Formal Languages ([formal-system.md](theory/formal-system.md), [formal-system-slides.pdf](theory/formal-system-slides.pdf))
          1. [PQ system](theory/pq-system.md)
       3. Deterministic Finite Automata (DFA) ([dfa.md](theory/dfa.md), [dfa-slides.pdf](theory/dfa-slides.pdf))
+      4. Non-deterministic Finite Automata (NFA) ([nfa.md](theory/nfa.md))
 3. **Practice**
    1. Version Control
       1. GitHub ([github.md](practice/github.md), [github-slides.pdf](practice/github-slides.pdf)) 
