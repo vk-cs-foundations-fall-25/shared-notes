@@ -84,10 +84,10 @@ Contact me if you have questions or cannot currently meet the technology require
 
 There are **no required textbooks** for this class. However, if you want to go deeper into some topics, I recommend the following books:
 
-| Title                                     | Author           | ISBN-10    | ISBN-13        | Edition     |
+| Title                                     | Author           | ISBN-13        | Edition     |
 | ----------------------------------------- | ---------------- | ---------- | -------------- | ----------- |
-| Introduction to the Theory of Computation | Michael Sipser   | 113318779X | 978-1133187790 | 3rd Edition |
-| Introduction to Computer Science in Java  | Robert Sedgewick | 032157351X | 978-0321573513 | 3rd Edition |
+| Introduction to the Theory of Computation | Michael Sipser   | 978-1133187790 | 3rd Edition |
+| Computer Science: An Interdisciplinary Approach  | Robert Sedgewick | 978-0134076454 | 1st Edition |
 
 Textbook(s) available for purchase in the LWTech bookstore or online at www.lwtechshop.com. The bookstore will be open for walk-in customers and online ordering.  If ordering on the website, students can choose to pick up their order in store, or they can have their order shipped to them for an additional fee. bookstore (LWTech.edu/Bookstore). 
 
