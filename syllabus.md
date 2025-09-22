@@ -85,7 +85,7 @@ Contact me if you have questions or cannot currently meet the technology require
 There are **no required textbooks** for this class. However, if you want to go deeper into some topics, I recommend the following books:
 
 | Title                                     | Author           | ISBN-13        | Edition     |
-| ----------------------------------------- | ---------------- | ---------- | -------------- | ----------- |
+| ----------------------------------------- | ---------------- | ---------- | -------------- |
 | Introduction to the Theory of Computation | Michael Sipser   | 978-1133187790 | 3rd Edition |
 | Computer Science: An Interdisciplinary Approach  | Robert Sedgewick | 978-0134076454 | 1st Edition |
 
