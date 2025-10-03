@@ -170,7 +170,9 @@ A DFA consists of:
 
 ---
 
-# Applying Theory to Turnstile
+# Turnstile DFA
+
+<div class='columns'><div>
 
 Let's formalize our turnstile:
 
@@ -184,16 +186,33 @@ Let's formalize our turnstile:
 
 3. **Transitions:** As shown in our diagram
 
+</div><div>
+
+![width:600px](../media/turnstyle-abstract.excalidraw.svg)
+
+</div></div>
+
 ---
 
-# Complete Turnstile DFA
+# Turnstile Language
 
-![width:700px](../media/turnstyle-abstract.excalidraw.svg)
+<div class='columns'><div>
 
-**Language:** All sequences that return turnstile to locked state
-- Any number of P's (stay locked)
-- Followed by: T (unlock) → any T's → P (lock)
-- Repeat as needed
+The Turnstyle DFA **decides** the language of strings over {T, P} that take the turnstile from the locked state back to the locked state
+
+Examples:
+1. ε
+2. TP
+3. P...P
+4. P...PTP
+5. P...PTT...TP
+6. P...PTT...TPP...P
+
+</div><div>
+
+![width:600px](../media/turnstyle-abstract.excalidraw.svg)
+
+</div></div>
 
 ---
 
@@ -201,25 +220,33 @@ Let's formalize our turnstile:
 
 # 🎯 Practice Problem 1
 
-![width:500px](../media/dfa-ex1.excalidraw.svg)
+<div class='columns'><div>
+
+![width:500px](../media/dfa-ex0.excalidraw.svg)
+
+</div><div>
 
 **Questions:**
 1. What is the alphabet?
-2. What strings does this DFA accept?
+2. What is the language that it accepts/recognizes/decides?
 
-*(Work individually for 2 minutes, then discuss)*
+</div></div>
 
 ---
 
 # Solution to Practice 1
 
-![width:400px](../media/dfa-ex1.excalidraw.svg)
+<div class='columns'><div>
+
+![width:500px](../media/dfa-ex0.excalidraw.svg)
+
+</div><div>
 
 1. **Alphabet:** {0, 1}
 
-2. **Language:** Binary strings with:
-   - At least one 1, AND
-   - Even number of 0s after the last 1
+2. **Language:** Binary strings that are either the empty string or end in 0 (even integers)
+
+</div></div>
 
 ---
 
@@ -229,9 +256,7 @@ Let's formalize our turnstile:
 
 ## Your Turn!
 
-Design a DFA that recognizes binary strings that **end in 1**
-
-*(Work in pairs for 3 minutes)*
+Design a DFA that recognizes binary strings that **end in 1** (i.e. odd integers)
 
 ---
 
@@ -240,8 +265,8 @@ Design a DFA that recognizes binary strings that **end in 1**
 ![width:600px](../media/dfa-ex2.excalidraw.svg)
 
 **Key insight:** 
-- q₀: Haven't seen a 1 yet OR just saw a 0
-- q₁: Just saw a 1 (accept state)
+- q1: Haven't seen a 1 yet OR just saw a 0
+- q2: Just saw a 1 (accept state)
 
 ---
 
@@ -252,8 +277,6 @@ Design a DFA that recognizes binary strings that **end in 1**
 Design a DFA for binary strings with an **even number of 0s**
 (including no 0s and the empty string)
 
-*(Work in pairs for 3 minutes)*
-
 ---
 
 # Solution: Even Number of 0s
@@ -261,8 +284,8 @@ Design a DFA for binary strings with an **even number of 0s**
 ![width:600px](../media/dfa-ex3.excalidraw.svg)
 
 **Key insight:**
-- q₀: Even number of 0s seen (accept)
-- q₁: Odd number of 0s seen
+- even: Even number of 0s seen or no symbols seen (accept)
+- odd: Odd number of 0s seen
 - 1s don't affect the count!
 
 ---
