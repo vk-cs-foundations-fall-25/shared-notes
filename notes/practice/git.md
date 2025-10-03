@@ -70,6 +70,18 @@
    - Copy the REMOTE_REPO from GitHub
      - Click the green "Code" button and copy the URL (either HTTPS or SSH).
    - You may need authentication if the repo is private
+     - Personal Access Token (PAT) - Recommended for HTTPS
+       - Creating a PAT:
+         	1. Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)
+         	2. Click "Generate new token (classic)"
+         	3. Select scopes (typically ⁠repo for full repository access)
+         	4. Copy the token immediately (you won't see it again)
+     - Using PAT:
+        - git clone https://github.com/username/repo.git
+        - When prompted:
+          - Username: your_github_username
+          - Password: your_personal_access_token
+
 
 3. Make changes to your local repo
 
