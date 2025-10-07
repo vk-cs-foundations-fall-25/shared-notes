@@ -12,3 +12,4 @@
    1. Version Control
       1. GitHub ([github.md](practice/github.md), [github-slides.pdf](practice/github-slides.pdf)) 
       2. Git ([git.md](practice/git.md), [git-slides.pdf](practice/git-slides.pdf))
+   2. Shell ([shell.md](practice/shell.md))
