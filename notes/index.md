@@ -10,6 +10,7 @@
       4. Non-deterministic Finite Automata (NFA) ([nfa.md](theory/nfa.md), [nfa-slides.pdf](theory/nfa-slides.pdf))
       5. Regular Languages
          1. Operations ([regular-ops.md](theory/regular-ops.md))
+         2. Expressions ([re.md](theory/re.md))
 3. **Practice**
    1. Version Control
       1. GitHub ([github.md](practice/github.md), [github-slides.pdf](practice/github-slides.pdf)) 
