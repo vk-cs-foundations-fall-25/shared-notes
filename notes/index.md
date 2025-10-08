@@ -16,6 +16,7 @@
             1. *Go deeper?* Context Free Languages ([notes](theory/cfl.md))
             2. *Go deeper?* Context Sensitive Languages ([notes](theory/csl.md))
          4. Turing Machine (TM) ([notes](theory/tm.md))
+            1. Java Virtual TM ([notes](theory/java-virtual-tm.md))
 3. **Practice**
    1. Version Control
       1. GitHub ([notes](practice/github.md), [slides](practice/github-slides.pdf)) 
