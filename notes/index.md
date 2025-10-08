@@ -8,6 +8,8 @@
          1. [PQ system](theory/pq-system.md)
       3. Deterministic Finite Automata (DFA) ([dfa.md](theory/dfa.md), [dfa-slides.pdf](theory/dfa-slides.pdf))
       4. Non-deterministic Finite Automata (NFA) ([nfa.md](theory/nfa.md), [nfa-slides.pdf](theory/nfa-slides.pdf))
+      5. Regular Languages
+         1. Operations ([regular-ops.md](theory/regular-ops.md))
 3. **Practice**
    1. Version Control
       1. GitHub ([github.md](practice/github.md), [github-slides.pdf](practice/github-slides.pdf)) 
