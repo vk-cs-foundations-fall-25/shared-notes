@@ -33,7 +33,9 @@
      2. Recognizes the class of "[context free languages (CFLs)](cfl.md)"
         1. Contain all regular languages
         2. Also contain the example nonregular language above
-  2. ...
+  2. Linear Bounded Automata (LBA)
+     1. Recognizes the class of "[context sensitive languages (CSLs)](csl.md)
+  3. ...
 - Are we doomed to an endless sequence of conceiving of more powerful abstract machines to recognize more formal languages?
 - No!
 - There is a **pinnacle of abstract machines**: a class of abstract machines, all equivalent to one another, that are as powerful as any possible machine
