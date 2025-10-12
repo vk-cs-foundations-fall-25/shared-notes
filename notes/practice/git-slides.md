@@ -2,6 +2,7 @@
 marp: true
 theme: default
 paginate: true
+header: Git &nbsp;&nbsp; | &nbsp;&nbsp; CS301: Foundations of CS &nbsp;&nbsp; | &nbsp;&nbsp; Fall'25 &nbsp;&nbsp; | &nbsp;&nbsp; Vishesh Khemani
 ---
 
 # Git: Version Control System
