@@ -21,6 +21,6 @@
    1. Version Control
       1. GitHub ([notes](practice/github.md), [slides](practice/github-slides.pdf)) 
       2. Git ([notes](practice/git.md), [slides](practice/git-slides.pdf))
-   2. Shell ([notes](practice/shell.md))
+   2. Shell ([notes](practice/shell.md), [slides](practice/shell-slides.pdf))
    3. Build tools ([notes](practice/build.md))
    4. Unit testing ([notes](practice/test.md))
