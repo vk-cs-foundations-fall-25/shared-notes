@@ -574,7 +574,7 @@ type command       # Show command type
 apropos keyword    # Search manual pages
 ```
 
-**Remember**: `man ls` is your friend!
+**Remember**: `man` is your friend!
 
 ---
 
