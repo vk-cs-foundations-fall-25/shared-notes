@@ -116,14 +116,6 @@ Think of it as:
 
 ---
 
-# 🎯 Quick Check #1
-
-Given this NFA fragment, what happens when we read '1' from q1?
-
-![alt text](../media/nfa-fragment.excalidraw.svg)
-
----
-
 # Example 1: Strings Ending in "1"
 
 **Language:** Binary strings ending in "1"
@@ -144,70 +136,56 @@ Given this NFA fragment, what happens when we read '1' from q1?
 
 ---
 
-# Example 2: Strings Ending in "01"
+# Example 1: Trace 
 
 <div class='cols'><div>
 
-## DFA Version
-
-![height:400px](../media/01-ending-dfa.excalidraw.svg)
+![alt text](../media/1-ending-nfa.excalidraw.svg)
 
 </div><div>
 
-## NFA Version
+Trace of "011":
 
-![height:400px](../media/01-ending-nfa.excalidraw.svg)
+![width:350px](../media/nfa-trace.excalidraw.svg)
+
+
 
 </div></div>
 
 ---
 
-# Example 3: Third Position from End
+# Example 2: Strings Ending in "1" OR "10"
 
-![width:900px](../media/nfa.excalidraw.svg)
-
-**Question:** Where's the nondeterminism?
+![](../media/1-or-10-ending-nfa.excalidraw.svg)
 
 ---
 
-# Example 3: Analysis
+# Example 3a: Strings that repeat "10" zero or more times
 
-![width:700px](../media/nfa.excalidraw.svg)
-
-**Nondeterminism:** q1 has multiple transitions on '1'
-- q1 → q1 (stay)
-- q1 → q2 (guess this is 3rd from end)
-
-**Language:** Binary strings with '1' in 3rd position from end
+![](../media/10-star-nfa.excalidraw.svg)
 
 ---
 
-# 🎯 Active Learning: Trace Example
+# Example 3b: Strings that repeat "10" one or more times
 
-Trace the string "10110" through Example 3 NFA
-
-Work with a partner to:
-1. List all possible paths
-2. Identify which paths accept
-3. Determine if string is accepted
+![](../media/10-plus-nfa.excalidraw.svg)
 
 ---
 
-# Example 4: "OR" with null-transitions
+# 🎯 Active Learning: NFA Design
 
-![width:500px](../media/nfa-2.excalidraw.svg)
+Alphabet: {0, 1, ..., 9}
+Language: Whole numbers divisible by 5
 
-**Where's the nondeterminism?**
+1. Design an NFA that recognizes the above language
+2. Trace sample inputs "25", "20", "21"
 
 ---
 
-# Example 4: Analysis
+# 🎯 Active Learning: NFA Design Solution
 
-![width:400px](../media/nfa-2.excalidraw.svg)
+![](../media/divisible-by-5.excalidraw.svg)
 
-**Nondeterminism:** q1 has ε-transitions to two branches
-
-**Language:** Strings with even number of 0s OR odd number of 1s
 
 ---
 
@@ -275,66 +253,27 @@ Let's convert this NFA to a DFA...
 
 ---
 
-# 🎯 Active Learning: Conversion Practice
-
-Given this simple NFA:
-
-![alt text](../media/one-or-more-nfa.excalidraw.svg)
-
-1. Identify all subset states needed
-2. Build first 3 rows of transition table
-3. Which subsets are accept states?
-
----
-
 # Implementing NFAs in Java
 
-## Key API Difference from DFA
+## Key Differences from DFA
 
 ```java
 public class NFA {
   public static class State {
+    // Symbol can be NULL ('\0')!
     void addTransition(Character symbol, State to) {...}
     
     // Returns SET of states, not single state!
     Set<State> getTransition(Character symbol) {...}
   }
   
+  // 1. Set current state to the start state
+  // 2. Find all null-closure states i.e. reachable from the current state via null transitions
+  // 3. If the input is exhausted, return whether any null-closure state is accept
+  // 3. For each null-closure state, read the next symbol and the set of next states
+  // 4. For each next state, set it as the current state and repeat from step 2 (recursion helps)
   public boolean accepts(String input) {...}
 }
-```
-
----
-
-# Implementation Strategy
-
-**Processing the i-th symbol:**
-
-1. **Before reading:** Check ε-reachable states
-   - Follow all null transitions
-   - Beware of cycles!
-
-2. **After reading:** Follow all symbol transitions
-   - Explore all possible next states
-
-**Recommendation:** Use recursion!
-
----
-
-# Supporting Null Transitions
-
-**Practical approach:**
-
-```java
-// Use special character for epsilon
-char EPSILON = '\0';
-
-// Add epsilon transitions
-state1.addTransition(EPSILON, state2);
-
-// Check epsilon transitions
-Set<State> epsilonStates = 
-    currentState.getTransition(EPSILON);
 ```
 
 ---
@@ -364,20 +303,6 @@ If NFAs = DFAs in power, why bother?
 
 ## Trade-off:
 - Harder to implement/simulate
-
----
-
-# 🎯 Design Challenge
-
-**Your Turn:** Design an NFA for:
-
-"Binary strings containing the substring '101'"
-
-1. Sketch your NFA 
-2. Compare with a partner
-3. How many states did you use?
-
-Would the DFA be simpler or more complex?
 
 ---
 
