@@ -22,7 +22,7 @@
 | {1}                                               | 1              |
 | {0} U {1} = {0, 1}                                | 0\|1           |
 | {0, 1} . {0, 1} = {00, 01, 10, 11}                | (0\|1).(0\|1)  |
-| {0, 1}* = {$\epsilon$, 0, 1, 00, 01, 10, 11, ...} | (0\|1)*        |
+| {0, 1} = {ε, 0, 1, 00, 01, 10, 11, ...} | (0\|1)*        |
 | Binary strings with no leading 0s                 | 0\|(1.(0\|1)*) |
 
 - REs are a **compact and precise way to specify a regular language**
