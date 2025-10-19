@@ -9,8 +9,8 @@
          2. Regular Languages
             1. Deterministic Finite Automata (DFA) ([notes](theory/dfa.md), [slides](theory/dfa-slides.pdf))
             2. Non-deterministic Finite Automata (NFA) ([notes](theory/nfa.md), [slides](theory/nfa-slides.pdf))
-            3. Regular operations ([notes](theory/regular-ops.md))
-            4. Regular expressions ([notes](theory/re.md))
+            3. Regular operations ([notes](theory/regular-ops.md), [slides](theory/regular-ops-slides.pdf))
+            4. Regular expressions ([notes](theory/re.md), [slides](theory/re-slides.pdf))
             5. Regular expression evaluation ([notes](theory/re-eval.md))
          3. Beyond Regular Languages ([notes](theory/beyond-regular.md))
             1. *Go deeper?* Context Free Languages ([notes](theory/cfl.md))
