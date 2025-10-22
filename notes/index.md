@@ -23,4 +23,5 @@
       2. Git ([notes](practice/git.md), [slides](practice/git-slides.pdf))
    2. Shell ([notes](practice/shell.md), [slides](practice/shell-slides.pdf))
    3. Unit testing ([notes](practice/test.md))
-   4. Build tools ([notes](practice/build.md))
+   4. Collaborative development ([notes](practice/collab.md))
+   5. Build tools ([notes](practice/build.md))
