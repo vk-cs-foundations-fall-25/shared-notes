@@ -1,19 +1,25 @@
 # Collaborative Development on GitHub
 
-- A useful video for reference: [Collaborative coding with Github (2025) by Eric Bezzam](https://www.youtube.com/watch?v=3PIcBzBj5jY)
+This is a very brief overview of how to collaboratively work on a project with others on GitHub.
+
+Here's a useful video for reference: [Collaborative coding with Github (2025) by Eric Bezzam](https://www.youtube.com/watch?v=3PIcBzBj5jY)
 
 ---
 
 ## Demo
 
 1. Create new repo on GitHub under the class's organization
-   - e.g. https://github.com/vk-cs-foundations-fall-25/collab-demo
+  
+   e.g. https://github.com/vk-cs-foundations-fall-25/collab-demo
 
-2. Add collaborators to the repo on the website (unless GitHub classroom has already configured it)
+   - Enable Issues
+   - Enable Discussions
+
+1. Add collaborators to the repo on the website (unless GitHub classroom has already configured it)
 
    - Note: can't configure branch protection because it seems to require a paid subscription
 
-3. Each collaborator clones the repo (using PAT as password)
+2. Each collaborator clones the repo (using PAT as password)
    
    Example commands:
    ```
@@ -25,14 +31,14 @@
    export PS1="<collab1-name>$ "
    ```
 
-4. Create issues and assign to collaborators on the website
+3. Create issues and assign to collaborators on the website
 
    Example issues:
    1. Define API and empty tests
    2. Implement method1
    3. Implement method2
 
-5. Assignee defines API on a branch and creates a GitHub pull request to merge the branch into `main`
+4. Assignee defines API on a branch and creates a GitHub pull request to merge the branch into `main`
    
    Example commands:
    ```
@@ -49,7 +55,7 @@
      - Conduct code review
      - Merge after approval
 
-6. Each collaborator follows the same workflow to address all issues
+5. Each collaborator follows the same workflow to address all issues
 
 ---
 
@@ -87,3 +93,60 @@ git merge main                    # Merge main into current
 ```
 
 ---
+
+## Best Practices
+
+1. Branch Naming Conventions
+   
+   Use clear, descriptive names:
+   - ⁠feature/user-authentication
+   - bugfix/login-error
+   - hotfix/security-patch
+   - refactor/database-optimization
+
+2. Commit Practices
+  
+   - Commit frequently with meaningful messages
+   - Keep commits atomic: Each commit should represent one logical change
+   - Write good commit messages:
+
+      ```
+      Add user authentication feature
+
+      - Implement JWT token generation
+      - Add login endpoint
+      - Create user session middleware
+
+      Closes #123
+      ```
+
+1. Keep Branches Up to Date
+
+   Regularly merge or rebase from main:
+   
+   ```
+   git checkout feature-login
+   git merge main
+
+   # Or for a cleaner history:
+   git rebase main
+   ```
+
+1. Small, Focused Pull Requests
+
+   - Easier to review
+   - Faster to merge
+   - Fewer conflicts	
+   - Easier to roll back if needed
+
+   Aim for:
+   - < 400 lines of code changed
+   - Single purpose or feature
+   - Complete and tested
+
+2. Communication
+   
+   - Comment on PRs actively
+   - Use GitHub Discussions
+   - Tag relevant people with @mentions
+   - Update PR descriptions as changes are made
