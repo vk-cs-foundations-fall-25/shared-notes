@@ -21,7 +21,7 @@
      4. Turing Machine (TM) ([notes](theory/tm.md))
         1. Java Virtual TM ([notes](theory/java-virtual-tm.md))
         2. Universality: TODO
-           1. Algorithm
+           1. Algorithm ([notes](theory/algorithm.md))
            2. Church-Turing Thesis
 ### Computability: TODO
 1. Unrecognizable Languages
