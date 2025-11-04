@@ -15,7 +15,7 @@
         3. Regular operations ([notes](theory/regular-ops.md), [slides](theory/regular-ops-slides.pdf))
         4. Regular expressions ([notes](theory/re.md), [slides](theory/re-slides.pdf))
         5. Regular expression evaluation ([notes](theory/re-eval.md), [slides](theory/re-eval-slides.pdf))
-     3. Beyond Regular Languages ([notes](theory/beyond-regular.md))
+     3. Beyond Regular Languages ([notes](theory/beyond-regular.md), [slides](theory/beyond-regular-slides.pdf))
         1. *Go deeper?* Context Free Languages ([notes](theory/cfl.md))
         2. *Go deeper?* Context Sensitive Languages ([notes](theory/csl.md))
      4. Turing Machine (TM) ([notes](theory/tm.md))
