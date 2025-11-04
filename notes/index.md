@@ -20,9 +20,9 @@
         2. *Go deeper?* Context Sensitive Languages ([notes](theory/csl.md))
      4. Turing Machine (TM) ([notes](theory/tm.md))
         1. Java Virtual TM ([notes](theory/java-virtual-tm.md))
-        2. Universality: TODO
+        2. Universality
            1. Algorithm ([notes](theory/algorithm.md))
-           2. Church-Turing Thesis
+           2. Church-Turing Thesis ([notes](theory/church-turing.md))
 ### Computability: TODO
 1. Unrecognizable Languages
 2. The halting problem is unsolvable
