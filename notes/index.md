@@ -18,7 +18,7 @@
      3. Beyond Regular Languages ([notes](theory/beyond-regular.md), [slides](theory/beyond-regular-slides.pdf))
         1. *Go deeper?* Context Free Languages ([notes](theory/cfl.md))
         2. *Go deeper?* Context Sensitive Languages ([notes](theory/csl.md))
-     4. Turing Machine (TM) ([notes](theory/tm.md))
+     4. Turing Machine (TM) ([notes](theory/tm.md), [slides](theory/tm-slides.pdf))
         1. Java Virtual TM ([notes](theory/java-virtual-tm.md))
         2. Universality
            1. Algorithm ([notes](theory/algorithm.md))
