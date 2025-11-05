@@ -91,6 +91,10 @@ To recognize $0^n1^n$, we need to:
 
 ---
 
+![](../media/0n1n-nfa.excalidraw.png)
+
+---
+
 # Key Insight
 
 > **There exist formal languages that are NOT regular languages**
