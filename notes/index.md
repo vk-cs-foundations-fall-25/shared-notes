@@ -22,7 +22,7 @@
         1. Java Virtual TM ([notes](theory/java-virtual-tm.md))
         2. Universality
            1. Algorithm ([notes](theory/algorithm.md), [slides](theory/algorithm-slides.pdf))
-           2. Church-Turing Thesis ([notes](theory/church-turing.md))
+           2. Church-Turing Thesis ([notes](theory/church-turing.md), [slides](theory/church-turing-slides.pdf))
 ### Computability: TODO
 1. Unrecognizable Languages
 2. The halting problem is unsolvable
