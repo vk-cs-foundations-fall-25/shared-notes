@@ -28,7 +28,7 @@
 2. The halting problem is unsolvable ([notes](theory/halting.md))
 3. Reduction to other unsolvable problems ([notes](theory/reduction.md))
 
-### Complexity ([notes](theory/complexity-overview.md))
+### Complexity ([notes](theory/complexity-overview.md), [slides](pdf/complexity-slides.pdf))
 1. Run times ([notes](theory/bigO.md))
 2. The class P ([notes](theory/class-p.md))
 3. The class NP ([notes](theory/class-np.md))
