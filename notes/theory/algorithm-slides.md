@@ -199,8 +199,6 @@ B) Any NFA
 C) Any TM  
 D) Both A and B
 
-*Take 30 seconds to decide, then we'll discuss*
-
 ---
 
 # Poll Answer
@@ -305,10 +303,6 @@ So far: recognizing/deciding **languages** (sets of strings)
 
 **Question:** Is this actually an algorithm by our formal definition? Why or why not?
 
-1. **Think** (1 min): Consider the definition
-2. **Pair** (2 min): Discuss with neighbor
-3. **Share** (2 min): Class discussion
-
 ---
 
 # Multiple Algorithms for Same Task
@@ -382,8 +376,6 @@ void quickSort(int[] arr) {
 3. Determining if a Java program will halt
 4. Computing the factorial of n
 
-**Your task:** Classify each (5 minutes)
-
 ---
 
 # Exercise Solutions
@@ -394,17 +386,6 @@ void quickSort(int[] arr) {
 4. **Factorial:** Computable (TM can multiply and halt)
 
 **Key insight:** Not all problems have algorithmic solutions!
-
----
-
-# The Power of Formal Definitions
-
-With our formal algorithm definition:
-
-✓ Can prove some problems are **unsolvable**  
-✓ Can compare algorithm **efficiency**  
-✓ Can guarantee **correctness**  
-✓ Can establish computational **limits**  
 
 ---
 
