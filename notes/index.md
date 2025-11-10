@@ -28,12 +28,12 @@
 2. The halting problem is unsolvable ([notes](theory/halting.md))
 3. Reduction to other unsolvable problems ([notes](theory/reduction.md))
 
-### Complexity: TODO
-1. Run times
-2. The class P
-3. The class NP
-4. P vs NP
-5. NP-completeness
+### Complexity ([notes](theory/complexity-overview.md))
+1. Run times ([notes](theory/bigO.md))
+2. The class P ([notes](theory/class-p.md))
+3. The class NP ([notes](theory/class-np.md))
+4. P vs NP ([notes](theory/p-vs-np.md))
+5. NP-completeness ([notes](theory/np-complete.md))
 
 ## Practice
 1. Version Control
