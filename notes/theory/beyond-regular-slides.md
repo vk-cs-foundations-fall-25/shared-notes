@@ -153,22 +153,6 @@ Each adds more capability than the previous one
 
 ---
 
-# Example: PDA for $0^n1^n$
-
-**Strategy:**
-
-1. **Reading 0s:**
-   - Push each 0 onto the stack
-
-2. **Reading 1s:**
-   - Pop one symbol for each 1
-
-3. **At end of input:**
-   - Accept if stack is empty
-   - Reject otherwise
-
----
-
 # Context Free Languages (CFLs)
 
 **Definition:** Languages recognized by PDAs
@@ -183,22 +167,11 @@ Each adds more capability than the previous one
 
 ---
 
-# Linear Bounded Automata (LBA)
-
-**Enhancement:** Turing Machine with **finite tape**
-
-**Recognizes:** Context Sensitive Languages (CSLs)
-
-**Example CSL (not CFL):**
-$$L = \{a^nb^nc^n \mid n \geq 0\}$$
-
-Equal numbers of a's, then b's, then c's
-
-**Note:** This is more powerful than CFLs!
+![](../media/venn-formal-cfl.excalidraw.svg)
 
 ---
 
-# The Ultimate Question
+# Turtles All The Way Down?
 
 > Are we doomed to an endless sequence of increasingly powerful machines?
 
@@ -209,21 +182,6 @@ There exists a **pinnacle** of abstract machines:
 - Called **Turing complete** or **Turing universal**
 - As powerful as any possible machine
 - We'll study these next!
-
----
-
-# But Even Turing Machines Have Limits
-
-**Surprising Fact:**
-
-Even the most powerful computational model cannot recognize ALL languages!
-
-**Some languages are:**
-- **Decidable** - TM can decide membership
-- **Recognizable** - TM can recognize members (but might not halt on non-members)
-- **Unrecognizable** - No TM can recognize at all!
-
-We'll explore this later in the course
 
 ---
 
@@ -242,21 +200,6 @@ We'll explore this later in the course
 | Decidable      | Set description      | Turing Machine            |
 | Recognizable   | Set description      | Turing Machine            |
 | Unrecognizable | Set description      | **No machine possible!**  |
-
----
-
-# Key Takeaways
-
-1. **Regular languages have limits** - Some simple patterns cannot be recognized by DFAs/NFAs
-
-2. **More powerful models exist:**
-   - PDAs (with stack) → Context Free Languages
-   - LBAs (bounded tape) → Context Sensitive Languages
-   - Turing Machines → Decidable/Recognizable Languages
-
-3. **There's a pinnacle** - Turing-complete machines are maximally powerful
-
-4. **Even the pinnacle has limits** - Some languages are unrecognizable by any machine
 
 ---
 
