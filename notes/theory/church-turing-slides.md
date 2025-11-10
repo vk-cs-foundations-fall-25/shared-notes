@@ -17,6 +17,10 @@ style: |
     display: block;
     margin: 0 auto;
   }
+  section.compact {
+      font-size: 1.6em;
+      line-height: 1.3;
+  }
 ---
 
 <!-- _class: lead -->
@@ -47,6 +51,90 @@ style: |
 ## **NO!**
 
 Turing Machines represent the **pinnacle** of computational power
+
+---
+
+<!-- _class: compact -->
+
+# Universal Turing Machine (UTM)
+
+**Key Insight:** A TM can be specified as data (a string)
+
+**Notation:** `<TM>` = string representation of TM
+
+**Universal TM:** A TM that can simulate any other TM
+```java
+public class UTM {
+  public UTM(String tmDescription) {...}
+  
+  /** Simulates the TM on the input */
+  public String simulate(String input) {...}
+}
+```
+
+**Revolutionary Idea:** Programs as data!
+- **Stored program concept** (von Neumann architecture)
+- Leads to **general-purpose computers**
+- Turing conceived this before computers existed!
+
+---
+
+<!-- _class: compact -->
+
+# Encoding a TM as a String
+
+![width:400px](../media/tm-incrementer-flip0.excalidraw.svg)
+
+**Many possible formats**
+
+<div class='cols'><div>
+
+**Mermaid:**
+```
+```mermaid
+stateDiagram-v2
+[*] --> scan;
+scan --> scan : 0->0,R|1->1,R
+scan -> flip1s : ⊔->⊔,L
+flip1s -> flip1s : 1->0,L
+flip1s -> done : 0->1,L|⊔->1,L
+done -> [*]
+```
+
+</div><div>
+
+**Custom Encoding Format:**
+
+```
+start scan
+accept done
+scan scan 0:0,R
+scan scan 1:1,R
+scan flip1s ⊔:⊔,L
+flip1s flip1s 1:0,L
+flip1s done 0:1
+flip1s done ⊔:1
+```
+
+</div></div>
+
+**The exact format doesn't matter** - what matters is that a TM CAN be encoded as a string!
+
+---
+
+# Programs Processing Programs
+
+**Does this seem strange?**
+
+It shouldn't! You encounter it constantly:
+
+- **App stores** - process app programs
+- **Compilers** - process high-level programs → assembly
+- **Java compiler** (`javac`) - Java → bytecode
+- **JVM** (`java`) - bytecode program → execution
+- **Interpreters** - Python, JavaScript, etc.
+
+**TMs formalized this concept decades before real computers!**
 
 ---
 

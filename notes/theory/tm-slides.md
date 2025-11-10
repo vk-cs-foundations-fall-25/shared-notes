@@ -68,13 +68,21 @@ By the end of this lecture, you will be able to:
 
 # The Turing Machine Model
 
-**Only slightly more complex than DFAs, but infinitely more powerful!**
+**Only slightly more complex than DFAs, but a lot more powerful!**
+
+<div class='cols'><div>
 
 Three key enhancements to DFAs:
 
 1. **Enhanced Tape**
 2. **Reject States**
 3. **Halting Behavior**
+
+</div><div>
+
+![](../media/abstract-machine-2.excalidraw.svg)
+
+</div></div>
 
 ---
 
@@ -113,8 +121,6 @@ Example: `0:1,R`
 ---
 
 # Enhancement 3: Halting
-
-**Critical Property:**
 
 When a TM reaches an **accept** or **reject** state:
 - It **stops immediately**
@@ -179,7 +185,83 @@ This defines the computational output
 
 <div class='cols'><div>
 
-![width:900px](../media/tm-incrementer.excalidraw.svg)
+1. ⊔⊔00⊔⊔
+2. ⊔⊔01⊔⊔
+3. ⊔⊔10⊔⊔
+4. ⊔⊔11⊔⊔
+5. ⊔100⊔⊔
+
+</div><div>
+
+Strategy:
+
+1. Scan right to end of input
+2. Move left, flipping 1s to 0s
+3. When you hit a 0 or ⊔, flip to 1 and stop
+
+</div></div>
+
+---
+
+# Example w/ output: Binary Incrementer
+
+<div class='cols'><div>
+
+![](../media/tm-incrementer-scan.excalidraw.svg)
+
+</div><div>
+
+Strategy:
+
+1. **Scan right to end of input**
+2. Move left, flipping 1s to 0s
+3. When you hit a 0 or ⊔, flip to 1 and stop
+
+</div></div>
+
+---
+
+# Example w/ output: Binary Incrementer
+
+<div class='cols'><div>
+
+![](../media/tm-incrementer-flip1s.excalidraw.svg)
+
+</div><div>
+
+Strategy:
+
+1. **Scan right to end of input**
+2. **Move left, flipping 1s to 0s**
+3. When you hit a 0 or ⊔, flip to 1 and stop
+
+</div></div>
+
+---
+
+# Example w/ output: Binary Incrementer
+
+<div class='cols'><div>
+
+![](../media/tm-incrementer-flip0.excalidraw.svg)
+
+</div><div>
+
+Strategy:
+
+1. **Scan right to end of input**
+2. **Move left, flipping 1s to 0s**
+3. **When you hit a 0 or ⊔, flip to 1 and stop**
+
+</div></div>
+
+---
+
+# Example w/ output: Binary Incrementer
+
+<div class='cols'><div>
+
+![width:900px](../media/tm-incrementer-flip0.excalidraw.svg)
 
 Strategy:
 
@@ -191,15 +273,15 @@ Strategy:
 
 **Example trace for 101 ($5_{10}$):**
 
-| State | Tape Position | Action |
-| :---- | :------------ | :----- |
-| q0    | **1** 0 1 ⊔   | R      |
-| q0    | 1 **0** 1 ⊔   | R      |
-| q0    | 1 0 **1** ⊔   | R      |
-| q0    | 1 0 1 **⊔**   | L, q1  |
-| q1    | 1 0 **1** ⊔   | 0, L   |
-| q1    | 1 **0** 0 ⊔   | 1, q2  |
-| q2    | 110           | accept |
+| State   | Tape Position | Action     |
+| :------ | :------------ | :--------- |
+| scan    | **1** 0 1 ⊔   | R          |
+| scan    | 1 **0** 1 ⊔   | R          |
+| scan    | 1 0 **1** ⊔   | R          |
+| scan    | 1 0 1 **⊔**   | L, flip 1s |
+| flip 1s | 1 0 **1** ⊔   | 0, L       |
+| flip 1s | 1 **0** 0 ⊔   | 1, done    |
+| done    | 110           | halt       |
 
 </div></div>
 
@@ -209,12 +291,28 @@ Strategy:
 
 **Given input:** `111`
 
-**Questions:**
-1. What will the final output be?
-2. How many state transitions occur?
-3. What if input is `1111111` (all 1s)?
+| State | Tape Position | Action |
+| :---- | :------------ | :----- |
+| scan  | ⊔ **1** 1 1 ⊔ | R      |
+| ...   | ...           | ...    |
 
 ---
+
+# Active Learning: Trace the Incrementer (soln)
+
+| State   | Tape Position | Action     |
+| :------ | :------------ | :--------- |
+| scan    | ⊔ **1** 1 1 ⊔ | R          |
+| scan    | ...           | R          |
+| scan    | ⊔ 1 1 1 **⊔** | L, flip 1s |
+| flip 1s | ⊔ 1 1 **1** ⊔ | 0,L        |
+| flip 1s | ⊔ 1 **1** 0 ⊔ | 0,L        |
+| flip 1s | ⊔ **1** 0 0 ⊔ | 0,L        |
+| flip 1s | **⊔** 0 0 0 ⊔ | 1,done     |
+| done    | 1 0 0 0 ⊔     | halt       |
+
+---
+
 
 ## Example: Binary Adder
 
@@ -332,39 +430,25 @@ Strategy:
 
 Just as we implemented virtual DFAs and NFAs, we can implement virtual TMs!
 
-**Key difference:** The tape structure
+**Key differences:**
+- The tape structure
+  - writes
+  - bidirectional
+  - infinite
+- accept/reject states
+- halting
 
 ---
-
-<!-- _class: compact -->
 
 # Java Implementation: Tape Class
 
 ```java
 public class Tape {
-  public Tape(String input) {
-    right.push(' ');
-    for (int i = input.length() - 1; i >= 0; i--) {
-      right.push(input.charAt(i));
-    }
-    currentSymbol = right.pop();
-  }
   
   public char read() {...}
   public void write(char symbol) {...}
-  
-  public void moveLeft() {
-    right.push(currentSymbol);
-    if (left.isEmpty()) {
-      left.push(' ');
-    }
-    currentSymbol = left.pop();
-  }
+  public void moveLeft() {...}
   public void moveRight() {...}
-  
-  private char currentSymbol;
-  private final Stack<Character> left = new Stack<>();
-  private final Stack<Character> right = new Stack<>();
 }
 ```
 
@@ -400,8 +484,6 @@ Right: [1]
 
 ---
 
-<!-- _class: compact -->
-
 # Java Implementation: Transition Class
 
 ```java
@@ -415,10 +497,6 @@ public class Transition {
     this.writeSymbol = writeSymbol;
     this.direction = direction;
   }
-  
-  public State getNextState() {...}
-  public Character getWriteSymbol() {...}
-  public Direction getDirection() {...}
   
   private final State nextState;
   private final Character writeSymbol;
@@ -441,14 +519,11 @@ public class State {
     return transitions.get(inputSymbol);
   }
   
-  private final Map<Character, Transition> transitions 
-    = new HashMap<>();
+  private final Map<Character, Transition> transitions  = new HashMap<>();
 }
 ```
 
 ---
-
-<!-- _class: compact -->
 
 # Java Implementation: TM Class
 
@@ -460,125 +535,10 @@ public class TM {
   public void addAcceptState(State state) {...}
   public void addRejectState(State state) {...}
 
-  /** Returns final state (accept/reject) and tape contents */
-  public String run(String input) {
-    Tape tape = new Tape(input);
-    State current = startState;
-    
-    while (!isAcceptState(current) && !isRejectState(current)) {
-      char symbol = tape.read();
-      Transition t = current.getTransition(symbol);
-      
-      tape.write(t.getWriteSymbol());
-      if (t.getDirection() == Direction.L) {
-        tape.moveLeft();
-      } else {
-        tape.moveRight();
-      }
-      current = t.getNextState();
-    }
-    
-    return formatResult(current, tape);
-  }
+  /** Returns final decision (accept/reject) and updates tape contents. */
+  public boolean run(Tape tape) {...}
 }
 ```
-
----
-
-<!-- _class: compact -->
-
-# Universal Turing Machine (UTM)
-
-**Key Insight:** A TM can be specified as data (a string)
-
-**Notation:** `<TM>` = string representation of TM
-
-**Universal TM:** A TM that can simulate any other TM
-```java
-public class UTM {
-  public UTM(String tmDescription) {...}
-  
-  /** Simulates the TM on the input */
-  public String simulate(String input) {...}
-}
-```
-
-**Revolutionary Idea:** Programs as data!
-- **Stored program concept** (von Neumann architecture)
-- Leads to **general-purpose computers**
-- Turing conceived this before computers existed!
-
----
-
-<!-- _class: compact -->
-
-# Encoding a TM as a String
-
-![width:400px](../media/tm-incrementer.excalidraw.svg)
-
-**Many possible formats**
-
-<div class='cols'><div>
-
-**Graphviz:**
-```
-digraph {
-    start -> q0;
-    q0 -> q0 [label="0:0,R\n1:1,R"];
-    q0 -> q1 [label="⊔:⊔,L"];
-    q1 -> q1 [label="1:0,L"];
-    q1 -> q2 [label="0:1\n⊔:1"];
-    q2 -> accept;
-}
-```
-
-</div><div>
-
-**Custom Encoding Format:**
-
-```
-start q0
-accept q2
-q0 q0 0:0,R
-q0 q0 1:1,R
-q0 q1 ⊔:⊔,L
-q1 q1 1:0,L
-q1 q2 0:1
-q1 q2 ⊔:1
-```
-
-</div></div>
-
-**The exact format doesn't matter** - what matters is that a TM CAN be encoded as a string!
-
----
-
-# Programs Processing Programs
-
-**Does this seem strange?**
-
-It shouldn't! You encounter it constantly:
-
-- **App stores** - process app programs
-- **Compilers** - process high-level programs → assembly
-- **Java compiler** (`javac`) - Java → bytecode
-- **JVM** (`java`) - bytecode program → execution
-- **Interpreters** - Python, JavaScript, etc.
-
-**TMs formalized this concept decades before real computers!**
-
----
-
-# TM Variants (All Equivalent)
-
-Many variations of TMs exist:
-
-1. **Multiple tapes**
-2. **Nondeterministic TMs**
-3. **Two-way infinite tape vs. one-way**
-4. **Different halt conditions**
-
-**Remarkable Fact:** All variants can simulate each other!
 
 ---
 
@@ -607,9 +567,7 @@ Many variations of TMs exist:
 
 ✓ TMs add tape read/write and bidirectional movement to DFAs  
 ✓ TMs can recognize non-regular languages like $0^n1^n$  
-✓ TMs can be implemented in Java using two stacks for the tape  
-✓ Universal TMs can simulate any TM (programs as data!)  
-✓ All TM variants are equivalent in computational power  
+✓ TMs can be implemented in Java using two stacks for the tape   
 ✓ TMs are the theoretical model for all computation  
 
 ---
