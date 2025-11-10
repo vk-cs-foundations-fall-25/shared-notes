@@ -25,7 +25,7 @@
            2. Church-Turing Thesis ([notes](theory/church-turing.md), [slides](pdf/church-turing-slides.pdf))
 ### Computability: TODO
 1. Unrecognizable Languages ([notes](theory/non-recognizable.md))
-2. The halting problem is unsolvable
+2. The halting problem is unsolvable ([notes](theory/halting.md))
 3. Reduction to other unsolvable problems
 
 ### Complexity: TODO
