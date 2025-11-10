@@ -312,8 +312,6 @@ Many variations of TMs have been studied:
 4. Conway's Game of Life
 5. A simple calculator
 
-**Think, then discuss with neighbor**
-
 ---
 
 # Challenge Answers
@@ -395,22 +393,6 @@ The thesis says TMs are **maximally powerful**, but:
 
 ---
 
-# Why the Thesis Matters
-
-1. **Theoretical Foundation**
-   - Defines scope of computer science
-   - Enables rigorous study of computation
-
-2. **Practical Guidance**
-   - Know when to stop looking for algorithms
-   - Understand fundamental limitations
-
-3. **Universal Framework**
-   - Results proven once apply everywhere
-   - Past, present, future computers
-
----
-
 # 🎯 Active Learning: Apply the Concept
 
 **Scenario:** Your friend claims they've invented a new programming language that can solve problems no other language can solve.
@@ -437,6 +419,8 @@ The thesis says TMs are **maximally powerful**, but:
 
 # The Language Hierarchy Revisited
 
+<div class='cols'><div>
+
 **Complete picture:**
 
 - **Regular** ⊂ **Context-Free** ⊂ **Decidable** ⊂ **Recognizable**
@@ -445,6 +429,12 @@ The thesis says TMs are **maximally powerful**, but:
 - **No machine** can do more
 
 **Some languages are unrecognizable** (we'll see why later)
+
+</div><div>
+
+![](../media/venn-formal-2.excalidraw.svg)
+
+</div></div>
 
 ---
 
@@ -489,39 +479,6 @@ Find a computational model that:
 
 ---
 
-# Key Takeaways
-
-✓ **Church-Turing Thesis:** TMs represent maximal computational power
-
-✓ **Universal:** All reasonable computational models are equivalent to TMs
-
-✓ **Turing Complete:** System equivalent in power to TMs
-
-✓ **Evidence:** Decades of failed attempts to find something more powerful
-
-✓ **Implications:** Results about TMs apply to all computers
-
-✓ **Limitations:** Thesis doesn't say everything is computable
-
----
-
-# What This Enables
-
-**With the Church-Turing Thesis, we can:**
-
-1. **Prove impossibility results**
-   - Show no algorithm exists for certain problems
-
-2. **Study complexity**
-   - Classify problems by difficulty
-
-3. **Understand limits**
-   - Know boundaries of computation
-
-**Next:** We'll see examples of undecidable problems
-
----
-
 # Looking Ahead
 
 **Coming Topics:**
@@ -554,7 +511,7 @@ Find a computational model that:
 
 # Final Thought
 
-> "The Church-Turing Thesis is the foundation that allows computer science to be a science."
+> The Church-Turing Thesis is the foundation that allows computer science to be a science
 
 **It tells us:**
 - What **can** be computed (decidable problems)
