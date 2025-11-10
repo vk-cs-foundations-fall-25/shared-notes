@@ -17,6 +17,7 @@ style: |
     display: block;
     margin: 0 auto;
   }
+math: mathjax
 ---
 
 <!-- _class: lead -->
