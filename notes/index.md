@@ -26,7 +26,7 @@
 ### Computability: TODO
 1. Unrecognizable Languages ([notes](theory/non-recognizable.md))
 2. The halting problem is unsolvable ([notes](theory/halting.md))
-3. Reduction to other unsolvable problems
+3. Reduction to other unsolvable problems ([notes](theory/reduction.md))
 
 ### Complexity: TODO
 1. Run times
