@@ -43,7 +43,7 @@
 3. Unit testing ([notes](pdf/test.md))
 4. Collaborative development ([notes](pdf/collab.md))
 5. Build tools ([notes](pdf/build.md))
-6. Memory management: TODO
+6. Memory management: ([slides](pdf/memory-slides.pdf))
 7. Generative AI for programming: TODO
 
 ---
