@@ -44,7 +44,7 @@
 4. Collaborative development ([notes](pdf/collab.md))
 5. Build tools ([notes](pdf/build.md))
 6. Memory management: ([slides](pdf/memory-slides.pdf))
-7. Generative AI for programming: TODO
+7. Generative AI for programming: ([slides](pdf/ai-slides.pdf))
 
 ---
 
