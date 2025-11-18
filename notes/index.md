@@ -40,9 +40,9 @@
    1. GitHub ([notes](practice/github.md), [slides](pdf/github-slides.pdf)) 
    2. Git ([notes](practice/git.md), [slides](pdf/git-slides.pdf))
 2. Shell ([notes](practice/shell.md), [slides](pdf/shell-slides.pdf))
-3. Unit testing ([notes](pdf/test.md))
-4. Collaborative development ([notes](pdf/collab.md))
-5. Build tools ([notes](pdf/build.md))
+3. Unit testing ([notes](practice/test.md))
+4. Collaborative development ([notes](practice/collab.md))
+5. Build tools ([slides](pdf/build-slides.md))
 6. Memory management: ([slides](pdf/memory-slides.pdf))
 7. Generative AI for programming: ([slides](pdf/ai-slides.pdf))
 
