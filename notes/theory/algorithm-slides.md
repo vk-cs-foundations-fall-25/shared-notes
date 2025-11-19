@@ -28,18 +28,6 @@ style: |
 
 ---
 
-# Learning Objectives
-
-By the end of this lecture, you will be able to:
-
-- **Define** what an algorithm is in computer science and theory
-- **Distinguish** between intuitive and formal definitions of algorithms
-- **Explain** the relationship between Turing Machines and algorithms
-- **Understand** decidability and computability
-- **Connect** theoretical algorithms to practical programming
-
----
-
 # Three Views of "Algorithm"
 
 <div class='cols'><div>
