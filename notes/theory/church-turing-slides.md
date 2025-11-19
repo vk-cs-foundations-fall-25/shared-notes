@@ -64,11 +64,9 @@ Turing Machines represent the **pinnacle** of computational power
 
 **Universal TM:** A TM that can simulate any other TM
 ```java
-public class UTM {
-  public UTM(String tmDescription) {...}
-  
-  /** Simulates the TM on the input */
-  public String simulate(String input) {...}
+public class UTM {  
+  /** Simulates the TM on the tape */
+  public boolean simulate(String tmDescription, Tape tape) {...}
 }
 ```
 
@@ -203,7 +201,7 @@ It shouldn't! You encounter it constantly:
 - Counter machines (Minsky)
 - Cellular automata (Conway)
 - Your laptop
-- Quantum computers (for decidable problems)
+- Quantum computers
 
 ---
 
@@ -241,21 +239,6 @@ Many variations of TMs have been studied:
 </div></div>
 
 **Key Insight:** These variations don't add computational power
-
----
-
-# Example: Multiple Tape TM
-
-**Intuition:** More tapes might be more powerful?
-
-**Reality:** Single-tape TM can simulate it!
-
-**How:**
-1. Encode multiple tapes on single tape
-2. Use special markers to track positions
-3. Simulate each step of multi-tape TM
-
-**Result:** Same power, just slower (but speed doesn't matter for computability)
 
 ---
 
@@ -316,12 +299,12 @@ Many variations of TMs have been studied:
 
 # Challenge Answers
 
-| System                    | Turing Complete? | Why/Why Not?                         |
-| :------------------------ | :--------------- | :----------------------------------- |
-| DFAs/Regular Expressions  | ❌ No            | Can't count unboundedly              |
-| HTML/CSS                  | ❌ No            | Static, no computation               |
-| Conway's Game of Life     | ✅ Yes           | Can simulate TM                      |
-| Simple calculator         | ❌ No            | Fixed operations, limited memory     |
+| System                   | Turing Complete? | Why/Why Not?                     |
+| :----------------------- | :--------------- | :------------------------------- |
+| DFAs/Regular Expressions | ❌ No             | Can't count unboundedly          |
+| HTML/CSS                 | ❌ No             | Static, no computation           |
+| Conway's Game of Life    | ✅ Yes            | Can simulate TM                  |
+| Simple calculator        | ❌ No             | Fixed operations, limited memory |
 
 ---
 
@@ -476,23 +459,6 @@ Find a computational model that:
 - You'll achieve **fame and glory**
 - Redefine computer science
 - Maybe a homework problem? 😀
-
----
-
-# Looking Ahead
-
-**Coming Topics:**
-
-1. **Undecidability**
-   - Problems no TM can solve
-   - The Halting Problem
-
-2. **Complexity Theory**
-   - Classes P and NP
-   - Practical vs. impractical
-
-3. **Reductions**
-   - Relating problems to each other
 
 ---
 
