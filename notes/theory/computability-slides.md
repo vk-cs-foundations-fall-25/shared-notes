@@ -83,7 +83,7 @@ style: |
 
 **Definition:** A set is countable if it has a 1-to-1 correspondence with natural numbers
 
-**Example: Natural numbers ↔ Even numbers**
+**Example: Natural numbers <=> Even numbers**
 
 | Natural |   ↔   | Even  |
 | :-----: | :---: | :---: |
@@ -160,14 +160,6 @@ x = 1010... (opposite of diagonal)
 
 ---
 
-<!-- _class: lead -->
-
-# 🤔 Think-Pair-Share
-
-**Question:** Why can't we use diagonalization to prove that finite strings are uncountable?
-
----
-
 # Languages as Infinite Binary Strings
 
 **Every language corresponds to a unique infinite binary string**
@@ -179,7 +171,7 @@ x = 1010... (opposite of diagonal)
 | In a(a\|b)*? |  No   |  Yes  |  No   |  Yes  |  Yes  |  No   |  No   |  Yes  |  ...  |
 | Binary       | **0** | **1** | **0** | **1** | **1** | **0** | **0** | **1** |  ...  |
 
-**Result:** Language ↔ 010110011...
+**Result:** Language <=> 010110011...
 
 **Since infinite binary strings are uncountable:**
 → The set of all languages is **uncountable**!
@@ -322,14 +314,14 @@ contrarian(javaCodeForContrarian);
 
 <div class='cols'><div>
 
-**Case 1:** Suppose `contrarian(javaCodeForContrarian)` halts
+**Reality 1:** `contrarian(javaCodeForContrarian)` halts
 - Then `halts(javaCodeForContrarian, javaCodeForContrarian)` returns true
 - So contrarian enters the infinite loop
 - **Contradiction!** It doesn't halt
 
 </div><div>
 
-**Case 2:** Suppose `contrarian(javaCodeForContrarian)` doesn't halt
+**Reality 2:** `contrarian(javaCodeForContrarian)` doesn't halt
 - Then `halts(javaCodeForContrarian, javaCodeForContrarian)` returns false
 - So contrarian skips the loop and halts
 - **Contradiction!** It does halt
@@ -572,11 +564,10 @@ public static Predicate<String> createMw(
         M.test(w);  // Run M on w
         
         // If M(w) doesn't halt, we never get here
-        // So this predicate acts like funcNo
+        // So the function Mw acts like funcNo
         
-        // If M(w) halts, continue:
+        // If M(w) halts, the function Mw acts like funcYes.
         return funcYes.test(x);
-        // So this predicate acts like funcYes
     };
 }
 ```
@@ -610,14 +601,30 @@ public static boolean halts(Predicate<String> M, String w) {
 
 # 🎮 Active Learning: Find the Reduction
 
-**Scenario:** Can we determine if a program outputs "Hello"?
+**Scenario:** Can we determine if a function prints "Hello" on a given input?
 
-**Work in groups:**
-1. How would you reduce halting to this problem?
-2. What function would you construct?
-3. What's the key insight?
+**Hint:** Create a function that runs f(x), then prints "Hello" if it halts
 
-**Hint:** Create a program that runs M(w), then outputs "Hello" if it halts
+---
+
+# 🎮 Active Learning: Solution
+
+```java
+// Assume this exists.
+boolean doesPrintHello(Predicate<String> f, String x) {...}
+
+// Then can implement halts, which is impossible!
+boolean halts(Predicate<String> f, String x) {
+    // Construct a function 'g' that:
+    // If f(x) halts, then g(x) prints "Hello".
+    // If g(x) prints "Hello", then f(x) halts.
+    Function<String> g = ignore -> {
+        f.test(x);
+        System.out.println("Hello");
+    }
+    return doesReturnHello(g, x);
+}
+```
 
 ---
 
@@ -657,12 +664,6 @@ public static boolean halts(Predicate<String> M, String w) {
 
 > "In a very real sense, unsolvability and Rice's theorem provide a foundation for understanding why ensuring reliability in software systems is so difficult."
 
-**Key Insights:**
-- We can't build programs that verify arbitrary properties
-- Understanding impossibility guides realistic expectations
-- Focus effort on tractable problems
-- Design systems acknowledging fundamental limits
-
 ---
 
 # 💭 Reflection: Personal Connection
@@ -674,52 +675,11 @@ public static boolean halts(Predicate<String> M, String w) {
 
 ---
 
-<!-- _class: compact -->
-
-# Key Techniques Summary
-
-**1. Counting Arguments**
-- Compare sizes of infinite sets
-- Prove existence without construction
-
-**2. Proof by Contradiction**
-- Assume solution exists
-- Derive logical contradiction
-- Conclude assumption was false
-
-**3. Reduction**
-- Convert one problem to another
-- Transfer unsolvability
-- Build on known results
-
----
-
 # Complete Picture: The Formal Language Hierarchy
 
-**From simplest to most complex:**
-
-1. **Regular** - DFA/NFA/Regex (always tractable)
-2. **Context-Free** - PDA (often tractable)
-3. **Decidable** - TM that always halts (may be intractable)
-4. **Recognizable** - TM (may not halt on rejection)
-5. **Unrecognizable** - No TM possible
+![width:700px](../media/venn-formal-2.excalidraw.svg)
 
 **We focused on the boundary between recognizable and unrecognizable**
-
----
-
-# Practical Takeaways
-
-**For Software Engineering:**
-- Don't try to build perfect analyzers
-- Accept limitations in testing/verification
-- Design with impossibility in mind
-- Focus on heuristics and practical solutions
-
-**For Computer Science:**
-- Understanding limits is as important as capabilities
-- Impossibility results guide research directions
-- Theoretical foundations impact practice
 
 ---
 
