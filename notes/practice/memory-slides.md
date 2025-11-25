@@ -17,18 +17,6 @@ style: |
 
 ---
 
-# Learning Objectives
-
-By the end of this lecture, you will be able to:
-
-- **Explain** the memory hierarchy and program memory layout
-- **Compare** stack vs heap allocation strategies
-- **Identify** common memory management errors
-- **Evaluate** algorithmic choices through memory optimization lens
-- **Apply** memory management best practices in C/C++ and Java
-
----
-
 # Why Memory Management Matters
 
 **Real-world impact:**
@@ -37,8 +25,6 @@ By the end of this lecture, you will be able to:
 2. **Stability**: Memory errors cause crashes and security vulnerabilities
 3. **Scalability**: Poor memory management limits how big your system can grow
 4. **Cost**: Memory is expensive at scale (servers, cloud computing)
-
-**In this course**: Connects to computational theory (space complexity, Turing machines)
 
 ---
 
@@ -108,18 +94,17 @@ B) Linked list with nodes scattered in memory (random access)
 
 ```
 High Address
-    ↑
 ┌──────────────┐
 │   Command    │ ← Arguments, environment variables
 │   Line Args  │
 ├──────────────┤
-│    Stack     │ ← Grows downward (local variables)
+│  **Stack**   │ ← Grows downward (local variables)
 │      ↓       │
 │              │
 │   (unused)   │
 │              │
 │      ↑       │
-│    Heap      │ ← Grows upward (dynamic allocation)
+│    **Heap**  │ ← Grows upward (dynamic allocation)
 ├──────────────┤
 │     BSS      │ ← Uninitialized global/static data
 ├──────────────┤
@@ -129,20 +114,6 @@ High Address
 └──────────────┘
 Low Address
 ```
-
----
-
-# Memory Segments Explained
-
-| Segment   | Purpose                     | Characteristics                  |
-| --------- | --------------------------- | -------------------------------- |
-| **Text**  | Executable code             | Read-only, fixed size            |
-| **Data**  | Initialized globals/statics | Fixed size, loaded at start      |
-| **BSS**   | Uninitialized globals       | Zeroed at program start          |
-| **Heap**  | Dynamic allocation          | Grows up, managed explicitly     |
-| **Stack** | Function calls, locals      | Grows down, automatic management |
-
-**Key Insight**: Different memory regions serve different purposes with different management strategies
 
 ---
 
@@ -374,26 +345,6 @@ gcc -fsanitize=address myprogram.c
 
 ---
 
-# 🎯 Active Learning: Spot the Errors
-
-```c
-void process_data() {
-    int* data = malloc(sizeof(int) * 100);
-    
-    for (int i = 0; i <= 100; i++) {  // Line 4
-        data[i] = i * 2;
-    }
-    
-    int* result = calculate(data);
-    free(data);
-    
-    printf("Result: %d\n", result[0]);  // Line 11
-    free(result);
-}
-```
-
----
-
 <!-- _class: lead -->
 
 # Part 4: Memory Management in Java
@@ -610,57 +561,6 @@ System.out.println("Memory: " + memory + " bytes");
 
 ---
 
-# 🎯 Active Learning: Optimization Challenge
-
-You need to store 1 million user records with:
-- User ID (int)
-- Username (string, avg 20 chars)
-- Email (string, avg 30 chars)
-
-**Calculate**:
-1. Minimum memory needed
-2. Estimate actual memory with overhead
-3. What's the best data structure?
-4. How would you optimize for lookups?
-
----
-
-<!-- _class: lead -->
-
-# Part 6: Connection to Theory
-
----
-
-# Memory and Computational Theory
-
-**1. Stack-Based Languages (CFLs)**
-- Context-free languages recognized by pushdown automata (PDA)
-- PDA uses a stack - same as function call stack!
-- This is why parsers for programming languages use stacks
-
-**2. Turing Completeness**
-- System is Turing complete if it has "unbounded" memory
-- Real computers have finite memory, but we model them as Turing machines
-- Any Turing-complete system can theoretically solve any computable problem
-
----
-
-# Space Complexity
-
-**Theory perspective**:
-- Algorithms analyzed by **space complexity** (memory usage)
-- Space complexity classes:
-  - **PSPACE**: Polynomial space
-  - **LOGSPACE**: Logarithmic space
-  - **NSPACE**: Nondeterministic space
-
-**Connection to practice**:
-- Big-O notation for space: O(1), O(n), O(n²), etc.
-- Informs data structure and algorithm choices
-- Example: In-place algorithms use O(1) extra space
-
----
-
 <!-- _class: lead -->
 
 # Summary and Best Practices
@@ -687,21 +587,6 @@ You need to store 1 million user records with:
 1. Choose algorithms considering space-time tradeoffs
 6. Use memory pools, cache-friendly access patterns
 7. Measure before optimizing
-8. Connection to theory: space complexity, Turing completeness
-
----
-
-# Best Practices Checklist
-
-✓ **Prefer stack over heap** when possible  
-✓ **Check allocation success** before using memory  
-✓ **Free memory** in reverse order of allocation  
-✓ **Initialize and null pointers** appropriately  
-✓ **Use smart pointers** if available  
-✓ **Use profiling tools** (Valgrind, AddressSanitizer)  
-✓ **Profile before optimizing** - measure actual usage  
-✓ **Consider tradeoffs** between time and space  
-✓ **Close resources** properly (RAII in C++)
 
 ---
 
