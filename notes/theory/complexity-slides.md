@@ -38,13 +38,14 @@ style: |
 
 ---
 
-# The Big Question
+# Today's Journey
 
-We know some problems are **solvable**...
-
-But can they be solved **efficiently**?
-
-**Key insight:** Solvable ≠ Practical
+1. Tractable vs intractable
+2. Measuring complexity (Big O)
+3. The class P
+4. The class NP
+5. P vs NP
+6. NP completeness
 
 ---
 
@@ -55,8 +56,8 @@ But can they be solved **efficiently**?
 A Turing machine can **efficiently** perform any computation that can be efficiently computed by any physically realizable computer
 
 **What this means:**
-- Any algorithm running in time T(n) on a physical computer
-- Can be simulated by a TM in time (T(n))^k for some constant k
+- Any algorithm running in time $T(n)$ on a physical computer
+- Can be simulated by a TM in time $(T(n))^k$ for some constant k
 - TM may be slower, but not **exponentially** slower
 
 ---
@@ -64,12 +65,12 @@ A Turing machine can **efficiently** perform any computation that can be efficie
 # Tractable vs Intractable
 
 **Tractable problems:** Solvable in **polynomial time**
-- Time proportional to n^k (for some constant k)
-- Examples: n, n², n³, n¹⁰
+- Time proportional to $n^k$ (for some constant k)
+- Examples: $n^\frac{1}{2}, n, n^2, n^3, n^{10}$
 
 **Intractable problems:** Require **exponential time**
-- Time proportional to 2^(n^k)
-- Examples: 2^n, 2^(n²), 2^(√n)
+- Time proportional to $2^{n^k}$
+- Examples: $2^\sqrt{n}, 2^n, 2^{n^2}$
 
 **The divide:** Polynomial vs Exponential determines practicality
 
@@ -263,6 +264,19 @@ D) O(n!)
 
 ---
 
+# Sorting Problem
+
+**Problem:** Given a list of comparable items, sort them in ascending order.
+
+**Brute-force approach:** Compute each permutation and check whether sorted
+  - Exponential!
+
+**Efficient approach:** 
+  - $O(n^2)$ insertion sort etc.
+  - $O(n \lg n )$ quicksort, mergsesort, etc.
+
+---
+
 # Graph Background
 
 **Graph:** Represents relationships between pairs of entities
@@ -323,13 +337,14 @@ PATH = {⟨G, s, t⟩ | G is a directed graph with a path from s to t}
 
 **Attempt 1: Brute-force search**
 
-Examine all potential paths in G:
+Examine all potential paths in G (which has m nodes):
 - Length 1: 1 path (direct edge s → t)
 - Length 2: (m-2) paths
+  - s → u → t, where u can be chosen (m-2) ways
 - Length 3: (m-2)(m-3) paths
 - Length m-1: (m-2)(m-3)...1 paths
 
-**Total:** O(m^(m-2)) paths → **Exponential!**
+**Total:** O($m^{m-2}$) paths → **Exponential!**
 
 **Result:** Intractable approach
 
@@ -359,7 +374,7 @@ Examine all potential paths in G:
 
 **Problem:** Given two natural numbers x and y, determine if they are relatively prime (share no common factors except 1)
 
-**Naive approach:** Find all factors of both numbers
+**Brute-force approach:** Find all factors of both numbers
 - For k-digit numbers, factors can be as large as 10^(k/2)
 - Exponential in input size!
 
@@ -367,6 +382,12 @@ Examine all potential paths in G:
 - Repeatedly apply: gcd(x,y) = gcd(y, x mod y)
 - Runs in O(k²) time
 - Polynomial! → Relatively Prime ∈ P
+
+---
+
+# Active Learning
+
+What other problems can you think of that are in P?
 
 ---
 
@@ -526,14 +547,17 @@ L = {w | V accepts ⟨w, c⟩ for some certificate c}
 
 # 💡 Application Exercise
 
-**Problem:** Prove that CLIQUE is in NP
+**Problem:** Show that SUBSET-SUM is in NP
 
-CLIQUE = {⟨G, k⟩ | G is undirected graph with k-clique}
+SUBSET-SUM={⟨S,t⟩ ∣ S is a finite multiset of integers and $\exists T \subseteq S : \sum_{x \in T}​x=t$}
+
+Examples:
+- ⟨{3, 5, 2, 8}, 10⟩ ∈ SUBSET-SUM (because 2 + 8 = 10 or 3 + 5 + 2 = 10)
+- ⟨{1, 4, 7}, 6⟩ ∉ SUBSET-SUM (no subset sums to 6)
 
 **Your task:**
-1. Method 1: Describe polynomial time verifier given a k-clique certificate
-2. Method 2: Describe nondeterministic TM deciding CLIQUE
-3. What is the certificate?
+1. Method 1: Describe polynomial time verifier (what is the certificate?)
+2. Method 2: Describe nondeterministic TM deciding SUBSET-SUM
 
 ---
 
@@ -876,10 +900,3 @@ SAT → 3-SAT → CLIQUE → Vertex Cover → Hamiltonian Path → TSP
 
 ---
 
-# ✍️ Reflection
-
-1. **Most important thing** you learned about complexity theory today
-
-2. **One question** you still have about P, NP, or NP-completeness
-
----
