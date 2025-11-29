@@ -359,22 +359,6 @@ What issues might exist? What test cases would you write?
 
 # Academic Integrity
 
-## Using AI Responsibly
-
-**Per our syllabus:**
-- "Using AI generated text or other AI output may be considered plagiarism"
-- "Each instructor and each assignment may have varying expectations"
-
-**Guidelines for this course:**
-- Always understand code you submit
-- Document when you use AI assistance
-- Don't submit AI code as your own work
-- Use AI for learning, not replacement
-
----
-
-# Academic Integrity
-
 ## Ethical Considerations
 
 <div class='cols'><div>
