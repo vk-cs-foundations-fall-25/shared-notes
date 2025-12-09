@@ -15,19 +15,6 @@ style: |
 
 ---
 
-# Overview
-
-## What We'll Cover Today
-
-- What is generative AI and how does it work?
-- Effective prompting strategies for code generation
-- Evaluating AI-generated code
-- Best practices and limitations
-- Ethical considerations
-- Practical applications
-
----
-
 # What is Generative AI?
 
 ## Core Concepts
@@ -37,35 +24,24 @@ style: |
 **Large Language Models (LLMs)** - AI trained on vast amounts of text to predict and generate human-like responses
 
 **Examples:**
-- ChatGPT (OpenAI)
-- Claude (Anthropic)
-- GitHub Copilot
-- Google Gemini
+- ChatGPT (OpenAI): http://chatgpt.com
+- Google Gemini: http://gemini.google.com
+- Claude (Anthropic): http://claude.ai (requires email)
 
 ---
 
 # How Does It Work?
-
-## Pattern Recognition & Prediction
 
 1. **Training Phase**
    - Model learns from billions of examples
    - Recognizes patterns in code structure, syntax, and common solutions
 
 2. **Generation Phase**
-   - Takes your prompt as input
+   - Takes your **prompt** as input
    - Predicts most likely next tokens (words/characters)
    - Generates coherent, contextually appropriate code
 
 **Key Insight:** AI doesn't "understand" code like humans do - it recognizes statistical patterns
-
----
-
-# Think-Pair-Share
-
-## Reflection Question
-
-What programming tasks do you think AI would be good at? What tasks might it struggle with?
 
 ---
 
@@ -94,151 +70,6 @@ What programming tasks do you think AI would be good at? What tasks might it str
 
 ---
 
-# Effective Prompting Strategies
-
-## The PREP Framework
-
-**P**recise - Be specific about what you want
-**R**elevant - Provide context and constraints
-**E**xamples - Include input/output samples
-**P**rocess - Break complex tasks into steps
-
----
-
-# Prompting Strategy 1: Be Precise
-
-## Vague vs. Specific Prompts
-
-**Vague:** "Write a function to sort"
-
-**Specific:** "Write a Java function that sorts an array of integers in ascending order using the quicksort algorithm. Include comments explaining the partitioning step."
-
-**Key Elements:**
-- Programming language
-- Data types
-- Algorithm choice
-- Output requirements
-- Documentation needs
-
----
-
-# Prompting Strategy 2: Provide Context
-
-## Add Relevant Information
-
-**Without Context:** "Create a search function"
-
-**With Context:** "Create a binary search function in Java for a sorted array of Student objects. Students should be compared by their ID (integer). Return the index if found, -1 if not found."
-
-**What to Include:**
-- Data structures involved
-- Constraints (sorted, unique, etc.)
-- Expected behavior
-- Return values
-
----
-
-# Prompting Strategy 3: Include Examples
-
-## Input/Output Samples
-
-```
-Create a Java method that validates email addresses.
-
-Examples:
-- "user@example.com" → true
-- "invalid.email" → false  
-- "test@domain.co.uk" → true
-- "@example.com" → false
-
-Requirements:
-- Must have @ symbol
-- Must have domain with extension
-- Must have username before @
-```
-
----
-
-# Active Learning: Write a Prompt
-
-Write a prompt to generate a Java method that:
-- Finds the maximum value in an ArrayList of doubles
-- Returns -1 if the list is empty
-- Include at least 2 test cases in your prompt
-
----
-
-# Prompting Strategy 4: Process (Break It Down)
-
-## Iterative Development
-
-**Complex Task:** "Create a student grade management system"
-
-**Better Approach:**
-1. "Create a Student class with fields for name, ID, and grades"
-2. "Add a method to calculate GPA"
-3. "Create a StudentDatabase class to store multiple students"
-4. "Add search functionality by student ID"
-
-**Benefit:** Easier to verify and debug each component
-
----
-
-# Advanced Prompting Techniques
-
-## Chain of Thought Prompting
-
-Encourage AI to "think through" the problem:
-
-```
-"Before writing the code, explain your approach:
-1. What algorithm will you use and why?
-2. What are the edge cases to consider?
-3. What is the time complexity?
-
-Then provide the implementation."
-```
-
-**Result:** More thoughtful, better-documented code
-
----
-
-# Advanced Prompting Techniques
-
-## Role-Based Prompting
-
-Frame the AI's perspective:
-
-```
-"You are a senior Java developer reviewing code 
-for a banking application. Write a secure password
-validation function that:
-- Requires 12+ characters
-- Includes uppercase, lowercase, digit, special char
-- Explain security considerations"
-```
-
-**Benefit:** Encourages best practices and security awareness
-
----
-
-# Evaluating Generated Code
-
-**Correctness**
-- Does it compile?
-- Does it handle edge cases?
-- Are there logical errors?
-
-**Efficiency**
-- What's the time/space complexity?
-- Are there obvious optimizations?
-
-**Style**
-- Does it follow conventions?
-- Is it readable and maintainable?
-
----
-
 # Evaluating Generated Code
 
 ## Testing is Essential
@@ -251,23 +82,6 @@ validation function that:
 4. **Check assumptions** - are invariants maintained?
 
 **Remember:** AI can confidently produce wrong code!
-
----
-
-# Think-Pair-Share
-
-## Code Review Exercise
-
-Look at this AI-generated code:
-
-```java
-public int factorial(int n) {
-    if (n == 0) return 1;
-    return n * factorial(n - 1);
-}
-```
-
-What issues might exist? What test cases would you write?
 
 ---
 
@@ -328,35 +142,6 @@ What issues might exist? What test cases would you write?
 
 ---
 
-# Best Practices
-
-## Iterative Refinement
-
-**Follow-up prompting strategy:**
-
-1. Generate initial solution
-2. Ask for explanation: "Explain how this code works"
-3. Request improvements: "Optimize for time complexity"
-4. Add features: "Add error handling for X"
-5. Generate tests: "Write JUnit tests for this method"
-
-**Key:** Engage in a dialogue, don't accept first output
-
----
-
-# Active Learning Exercise
-
-## Prompt Engineering Challenge
-
-**Scenario:** You need a Java method to merge two sorted arrays
-
-1. Write an initial prompt
-2. Review generated code (if you have access to AI)
-3. Write a follow-up prompt to improve it
-4. Identify what test cases you'd need
-
----
-
 # Academic Integrity
 
 ## Ethical Considerations
@@ -383,152 +168,131 @@ What issues might exist? What test cases would you write?
 
 ---
 
-# Real-World Applications
+# Best Practices
 
-## Industry Uses of AI
+## Iterative Refinement
 
-<div class='cols'><div>
+**Follow-up prompting strategy:**
 
-**Code Generation**
-- GitHub Copilot in IDEs
-- Automated test generation
-- Boilerplate reduction
+1. Generate initial solution
+2. Ask for explanation: "Explain how this code works"
+3. Request improvements: "Optimize for time complexity"
+4. Add features: "Add error handling for X"
+5. Generate tests: "Write JUnit tests for this method"
 
-**Code Review & Analysis**
-- Bug detection
-- Security vulnerability scanning
-- Code quality suggestions
-
-</div><div>
-
-**Documentation**
-- Automatic comment generation
-- API documentation
-- Code explanations
-
-</div></div>
+**Key:** Engage in a dialogue, don't accept first output
 
 ---
 
-# Real-World Applications
+# Active Learning
 
-## AI in Professional Development
+Scenario: generating permutations
 
-<div class='cols'><div>
+Model: you choose
 
-**Pair programming assistant:**
-- Suggests completions
-- Offers alternative approaches
-- Identifies potential bugs
+## Initial prompt
 
-**Learning tool:**
-- Explains unfamiliar code
-- Provides examples
-- Teaches new languages/frameworks
-
-</div><div>
-
-**Productivity multiplier:**
-- Speeds up routine tasks
-- Reduces context switching
-- Handles repetitive work
-
-</div></div>
+```
+Write a function to generate all permutations of a list
+```
 
 ---
 
-# The Future of AI in Programming
+# Active Learning
 
-**Likely developments:**
-- Better context understanding
-- Stronger reasoning capabilities
-- Integration with development tools
-- Specialized domain models
+## Refine to be more specific
 
-**What won't change:**
-- Need for human judgment
-- Importance of understanding fundamentals
-- Value of problem-solving skills
-- Critical thinking requirements
+```
+Use Java as the programming language.
+The list should contain items of generic type T.
+```
 
 ---
 
-# Active Learning: Scenario Analysis
+# Active Learning
 
-**Break into groups of 3-4**
+## Specify structure and constraints
 
-<div class='cols'><div>
-
-Each group gets a scenario:
-1. Using AI to complete a homework assignment
-2. AI assistance during technical interview prep
-3. AI-generated code in a production system
-4. Using AI to learn a new programming concept
-
-</div><div>
-
-**Discuss:** 
-- When is AI use appropriate?
-- What risks exist?
-- How to use AI effectively?
-
-</div></div>
+```
+Use the following structure:
+class Permuter<T extends Comparable<T>> {
+    List<List<T>> generate(List<T> items) {...}
+}
+Also, handle duplicates in the list if items.
+```
 
 ---
 
-# Tips for Success
+# Active Learning
 
-<div class='cols'><div>
+## Add style and documentation
 
-**Start simple:**
-- Begin with well-defined problems
-- Build complexity gradually
-- Learn the tool's strengths
-
-**Stay engaged:**
-- Don't become passive
-- Question the output
-- Maintain critical thinking
-
-</div><div>
-
-**Keep learning:**
-- Use AI to accelerate, not replace learning
-- Explore AI suggestions to learn new patterns
-- Understand the "why" behind the code
-
-**Practice prompting:**
-- Experiment with different phrasings
-- Learn from successful prompts
-- Build a prompt library
-
-</div></div>
+```
+Add Javadoc explaining the approach and time and space complexity.
+Add inline comments for non-obvious logic.
+Follow Google Java style guidelines.
+```
 
 ---
 
-# Tips for Success
+# Active Learning
 
-**Develop judgment:**
-- Learn to spot errors quickly
-- Understand common pitfalls
-- Trust but verify
+## Add testing
 
-**Maintain fundamentals:**
-- Strong foundation in CS theory
-- Algorithm knowledge
-- Problem-solving skills
+```
+Generate a comprehensive test suite using JUnit.
+The test cases should cover:
+    - Empty list
+    - Single item list
+    - list with unique items
+    - list with duplicates
+Each test should have a descriptive name and a comment explaining what it validates
+```
+
+---
+
+# Active Learning
+
+## Explore scaling
+
+```
+When I try to run the code with a list of 15 items I run out of memory.
+How can I change the solution so that it uses less memory?
+```
 
 ---
 
-# Key Takeaways
+# Active Learning
 
-## Essential Points
+## Explore alternatives
 
-1. **AI is a tool**, not a replacement for understanding
-2. **Effective prompting** requires clarity, context, and examples
-3. **Always evaluate** generated code critically
-4. **Test thoroughly** - AI makes mistakes
-5. **Use ethically** - maintain academic integrity
-6. **Keep learning** - AI should enhance, not replace skill development
+```
+What are some alternative solutions? Compare the alternatives.
+```
 
 ---
+
+# Key observations:
+- Specificity beats brevity: Detailed prompts get better results
+- Context is crucial: Provide data structures, constraints, and requirements
+- Iterate and refine: Treat prompting as an iterative development process
+- Request explanations: Ask the AI to explain its reasoning
+- Verify and validate: AI-generated code still needs human review
+- Use AI as a teaching tool: Ask for alternatives, trade-offs, and deeper understanding
+
+> Prompt engineering is really about clearly communicating requirements (iteratively)
+
+---
+
+## Recommended Videos
+
+- Practical AI for Instructors and Students, Ethan & Lilach Mollick (Wharton School)
+  - https://www.youtube.com/watch?v=t9gmyvf7JYo&list=PLwRdpYzPkkn302_rL5RrXvQE8j0jLP02j&index=1
+- AI Cheerleaders Are Entirely Too Unambitious, Sendhil Mullainathan (MIT)
+  - https://alum.mit.edu/forum/video-archive/ai-cheerleaders-unambitious
+
+---
+
+## Word of Caution
+
+https://www.media.mit.edu/publications/your-brain-on-chatgpt/
